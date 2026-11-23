@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Stables at Wits End (concept B: Stable Door)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#F5EFE3;--lime-d:#E9DFCC;--brick:#96462C;--brick-d:#733422;--door:#8FA98C;--door-d:#35523D;--beam:#33241B;--mute:#5E4E43;--brass:#C69A4A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--lime);color:var(--beam);font:400 1.0625rem/1.65 "Hanken Grotesk",system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;margin:0;text-wrap:balance;line-height:1.08}
+h2{font-size:clamp(1.9rem,4.2vw,3rem)}
+p{margin:0 0 1em;max-width:60ch}
+:focus-visible{outline:3px solid var(--door-d);outline-offset:3px;border-radius:4px}
+.dark :focus-visible{outline-color:var(--lime)}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+/* wordmark: a stable-door nameplate */
+.plate{display:inline-block;text-decoration:none;background:var(--door-d);color:var(--lime);padding:9px 30px 10px;border-radius:6px;position:relative;text-align:center;line-height:1;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.plate::before,.plate::after{content:"";position:absolute;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--brass)}
+.plate::before{left:10px}.plate::after{right:10px}
+.plate small{display:block;font:500 .68rem/1 "Hanken Grotesk",sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px}
+.plate b{font:400 1.35rem/1 "Young Serif",serif}
+nav{display:flex;gap:24px;align-items:center;font-weight:500}
+nav a{text-decoration:none;padding:6px 0;background:linear-gradient(var(--brick),var(--brick)) 0 100%/0 2px no-repeat;transition:background-size .3s cubic-bezier(.16,1,.3,1)}
+nav a:hover{background-size:100% 2px}
+.btn{display:inline-block;background:var(--brick);color:#fff;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:6px;transition:background .2s,transform .25s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:var(--brick-d);transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--beam);box-shadow:inset 0 0 0 2px var(--beam)}
+.btn.line:hover{background:var(--beam);color:var(--lime)}
+nav .btn{padding:10px 18px;background:var(--brick)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(16px,3vw,36px) 0 clamp(48px,7vw,84px)}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);letter-spacing:-.01em}
+.hero p{font-size:1.18rem;margin:24px 0 28px;max-width:44ch;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+/* the photo is a stable door: two leaves, top one ajar */
+.door{justify-self:center;width:min(100%,420px);perspective:1400px;background:var(--beam);padding:12px;border-radius:210px 210px 8px 8px;box-shadow:0 26px 40px -24px rgba(51,36,27,.6)}
+.leaf{position:relative;overflow:hidden;height:0}
+.leaf img{position:absolute;left:0;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.leaf.top{padding-bottom:72%;border-radius:198px 198px 0 0;transform-origin:0 50%}
+.leaf.top img{top:0}
+.leaf.bot{padding-bottom:58%;margin-top:8px;border-radius:0 0 3px 3px}
+.leaf.bot img{bottom:0}
+.latch{position:absolute;right:10px;top:10px;width:34px;height:8px;border-radius:4px;background:var(--brass);box-shadow:0 2px 0 rgba(0,0,0,.3)}
+@media (prefers-reduced-motion:no-preference){
+  .leaf.top{animation:ajar 1.4s cubic-bezier(.16,1,.3,1) .2s both}
+  @keyframes ajar{from{transform:rotateY(-24deg)}to{transform:rotateY(0)}}
+}
+.strip{border-top:1px solid var(--beam);border-bottom:1px solid var(--beam);padding:16px 0;display:flex;flex-wrap:wrap;gap:6px 36px;font-weight:500}
+.strip span b{font-family:"Young Serif",serif;font-weight:400;font-size:1.1rem;margin-right:6px}
+
+section{padding:clamp(56px,8vw,100px) 0}
+.yard .lead{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,5vw,64px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.yard figure{margin:0}
+.yard figure img{aspect-ratio:3/2;object-fit:cover;border-radius:8px}
+.yard figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
+.yard h2{margin-bottom:16px}
+.rooms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none;margin:0;padding:0}
+.rooms li:nth-child(even){margin-top:36px}
+.rooms img{aspect-ratio:3/4;object-fit:cover;border-radius:120px 120px 6px 6px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.rooms li:hover img{transform:translateY(-6px)}
+.rooms h3{font-size:1.25rem;margin:14px 0 6px;display:inline-block;background:var(--door-d);color:var(--lime);padding:5px 14px 6px;border-radius:5px}
+.rooms p{font-size:.98rem;color:var(--mute);margin:0}
+
+.sleep{background:var(--door-d);color:var(--lime)}
+.sleep .grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+.sleep p.big{font:400 clamp(1.3rem,2.4vw,1.7rem)/1.35 "Young Serif",serif;max-width:24ch}
+.sleep dl{margin:0}
+.sleep dl div{padding:18px 0;border-top:1px solid rgba(245,239,227,.4)}
+.sleep dl div:last-child{border-bottom:1px solid rgba(245,239,227,.4)}
+.sleep dt{font:400 1.2rem/1.2 "Young Serif",serif;margin-bottom:4px}
+.sleep dd{margin:0;max-width:56ch}
+
+.out .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,88px)}
+.out h2{margin-bottom:16px}
+.tubprice{display:flex;flex-wrap:wrap;gap:8px 28px;font:400 1.5rem/1.2 "Young Serif",serif;color:var(--brick);margin:6px 0 16px}
+.tubprice small{font:500 .95rem/1.3 "Hanken Grotesk",sans-serif;color:var(--mute);display:block}
+.miles{list-style:none;margin:0;padding:0}
+.miles li{display:grid;grid-template-columns:86px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--beam);align-items:baseline}
+.miles li:last-child{border-bottom:1px solid var(--beam)}
+.miles b{font:400 1.25rem/1 "Young Serif",serif;color:var(--brick)}
+.miles span{display:block;font-size:.95rem;color:var(--mute)}
+
+.words{background:var(--lime-d)}
+.words blockquote{margin:0 auto;max-width:34em;font:400 clamp(1.35rem,2.7vw,2rem)/1.35 "Young Serif",serif;text-align:center;text-wrap:balance}
+.words p{margin:20px auto 0;text-align:center;color:var(--mute);font-size:.95rem}
+
+.book h2{margin-bottom:24px}
+.ways{list-style:none;margin:0;padding:0;border-top:1px solid var(--beam)}
+.ways a{display:grid;grid-template-columns:minmax(0,230px) 1fr auto;gap:6px 28px;align-items:center;padding:22px 6px;border-bottom:1px solid var(--beam);text-decoration:none;transition:background .2s}
+.ways a:hover{background:var(--lime-d)}
+.ways h3{font-size:1.5rem}
+.ways span{color:var(--mute)}
+.ways .go{color:var(--brick);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+
+.box{background:var(--brick);color:#fff}
+.box .grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,72px);align-items:center}
+.box img{aspect-ratio:1;object-fit:cover;object-position:50% 68%;border-radius:8px;justify-self:end;max-width:380px;width:100%}
+.box h2{margin-bottom:16px}
+.box a.link{font-weight:700;text-underline-offset:4px}
+.box a.link:hover{text-decoration-thickness:3px}
+
+footer{background:var(--beam);color:var(--lime);padding:56px 0 36px}
+footer .grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;align-items:start}
+footer h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}
+footer a{text-underline-offset:4px}
+footer a:hover{color:var(--door)}
+footer small{display:block;margin-top:36px;opacity:.8}
+
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  .hero,.yard .lead,.sleep .grid,.out .grid,.box .grid,footer .grid{grid-template-columns:1fr}
+  .door{width:min(78%,320px);order:-1}
+  .rooms{grid-template-columns:1fr 1fr}
+  .ways a{grid-template-columns:1fr}
+  .box img{justify-self:start;max-width:300px}
+}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;position:relative;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live The Stables at Wits End website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<!--
+THESIS: The building is the brand: an old stable yard of brick, beams and green doors, kept honest and made comfortable.
+OWN-WORLD: Stable-door nameplates with brass screws, limewash, brick red, the sage green of their own doors.
+STORY: Look over the half door, walk round the yard room by room, see where it is, book with the family.
+FIRST VIEWPORT: Limewash page, plain serif headline, their lupin-and-stables photo hung as a two-leaf stable door.
+-->
+<div class="wrap">
+  <header>
+    <a class="plate" href="#top" aria-label="The Stables at Wits End, home"><small>The Stables at</small><b>Wits End</b></a>
+    <nav aria-label="Main">
+      <a href="#yard">Round the yard</a>
+      <a href="#sleep">Sleeping</a>
+      <a href="#out">Hot tub and nearby</a>
+      <a class="btn" href="#book">Book a stay</a>
+    </nav>
+  </header>
+  <main id="top">
+  <div class="hero">
+    <div>
+      <h1>An old stable yard, turned into a house for ten.</h1>
+      <p>Brick, beams and green doors in the Cheshire countryside at Hartford. Family run, repurposed where possible, and big enough for the whole family or all your friends at one table.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a stay</a>
+        <a class="btn line" href="tel:07368449088">Call 07368 449088</a>
+      </div>
+    </div>
+    <div class="door">
+      <div class="leaf top"><img src="https://thestablesatwitsend.my.canva.site/_assets/media/3861addb168e9b9bff1a86b6fddc5cda.jpg" alt="A purple lupin in flower in front of the low brick stables and their pale green door" width="1807" height="2400"><span class="latch" aria-hidden="true"></span></div>
+      <div class="leaf bot" aria-hidden="true"><img src="https://thestablesatwitsend.my.canva.site/_assets/media/3861addb168e9b9bff1a86b6fddc5cda.jpg" alt="" width="1807" height="2400"></div>
+    </div>
+  </div>
+  <div class="strip">
+    <span><b>Sleeps 10</b>one house, all yours</span>
+    <span><b>10 out of 10</b>Booking.com Traveller Review Awards 2025</span>
+    <span><b>Guest favourite</b>Airbnb Superhost</span>
+  </div>
+  </main>
+</div>
+
+<section class="yard" id="yard">
+  <div class="wrap">
+    <div class="lead">
+      <figure>
+        <img src="https://thestablesatwitsend.my.canva.site/_assets/media/3834e62d1c8592bece80a84614672420.jpg" alt="The stable buildings seen from the air, set round a courtyard among fields and trees" width="1200" height="799" loading="lazy">
+        <figcaption>Wits End from above, with fields on every side.</figcaption>
+      </figure>
+      <div>
+        <h2>Come round the yard</h2>
+        <p>Step into a world where rustic repurposed charm meets modern comfort. Inside the old stables you will find cosy furnishings, old timber and brick, and room for ten to spread out.</p>
+      </div>
+    </div>
+    <ul class="rooms">
+      <li><img src="https://thestablesatwitsend.my.canva.site/_assets/media/032aeed4abeebf7e99d19725b1fd3a27.png" alt="The living room: leather sofas, a brick wall and oak beams" width="720" height="956" loading="lazy"><h3>Living room</h3><p>Sofas for everyone, with a piano and a guitar for those musically inspired.</p></li>
+      <li><img src="https://thestablesatwitsend.my.canva.site/_assets/media/80c145ca8106b8fcf43355f140d01919.jpg" alt="The games room with pool table and table football under dark beams" width="720" height="956" loading="lazy"><h3>Games room</h3><p>Pool table, table football, darts, PlayStation, board games and cards.</p></li>
+      <li><img src="https://thestablesatwitsend.my.canva.site/_assets/media/be6a7fb342c16340c1fed36287ff6fcc.jpg" alt="The long dining table laid for the group" width="720" height="956" loading="lazy"><h3>Kitchen and bar</h3><p>A fully equipped kitchen, a large dining table for the whole group and a bespoke bar area.</p></li>
+      <li><img src="https://thestablesatwitsend.my.canva.site/_assets/media/6d9aa32c23e81c2d154f5eb8e280654a.png" alt="A calm green bedroom with white bedding" width="720" height="956" loading="lazy"><h3>Bedrooms</h3><p>Beds for eight in the main bedrooms, and a king size bed built into the glow-in-the-dark, star-studded cinema room.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sleep dark" id="sleep">
+  <div class="wrap grid">
+    <div>
+      <h2>Where everyone sleeps</h2>
+      <p class="big" style="margin-top:18px">Up to ten guests, and every bed made up the way your group needs it.</p>
+    </div>
+    <dl>
+      <div><dt>Beds</dt><dd>All beds in the main bedrooms, which take eight people, can be set up as singles or doubles. The cinema room has a new king size bed built in.</dd></div>
+      <div><dt>Bed linen</dt><dd>Every duvet is super king size, whatever the bed. Linen is a minimum of 300 thread count, and all duvets and pillows are anti-allergy.</dd></div>
+      <div><dt>Bathroom</dt><dd>Two toilets and one shower. The shower has Bluetooth so you can listen to your favourite tunes.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="out" id="out">
+  <div class="wrap grid">
+    <div>
+      <h2>Out the back: a wood-fired hot tub</h2>
+      <p>It sits in a private garden, open to the air, so you can enjoy looking at the stars.</p>
+      <div class="tubprice"><div>£75<small>for its first use</small></div><div>£30<small>for each use after</small></div></div>
+      <p>The cost covers the time taken to clean, fill and pre-heat it, the fresh water and the wood to warm it. If you would like to use it, please let us know before you book.</p>
+      <p>Also on site: a 3 par golf course and laser tag.</p>
+    </div>
+    <div>
+      <h2>Down the road</h2>
+      <ul class="miles">
+        <li><b>4 miles</b><div>Wildshore<span>Water activities. A 10 minute drive.</span></div></li>
+        <li><b>6 miles</b><div>Oulton Park<span>Touring cars and superbikes. 15 minutes.</span></div></li>
+        <li><b>8 miles</b><div>Delamere Forest<span>Go Ape, mountain biking, walking. 16 minutes.</span></div></li>
+        <li><b>By train</b><div>Chester and Liverpool<span>Chester is 2 stops (30 mins) from Cuddington. Liverpool is 4 stops (30 mins) from Hartford.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="words">
+  <div class="wrap">
+    <blockquote>“The Stables at Wits End has that rare magic: the kind of place where long dinners turn into late-night laughter and nobody wants to be the first to go to bed.”</blockquote>
+    <p>From a guest review quoted on the Stables’ own website.</p>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2>Book a stay</h2>
+    <ul class="ways">
+      <li><a href="https://booking-directly.com/widgets/CvSD4731t3EUx8sFFP2vAmbaZjFaz17iXk4ZNqc3qUArprjdPhVbDNhJwbDnB/properties/unit-selection"><h3>Directly with us</h3><span>Check dates and book with the family.</span><span class="go">Check dates</span></a></li>
+      <li><a href="https://www.airbnb.co.uk/rooms/1100619209820169795"><h3>On Airbnb</h3><span>Rated a guest favourite, with Superhost status and 5-star reviews.</span><span class="go">View on Airbnb</span></a></li>
+      <li><a href="https://www.booking.com/Share-DCr284"><h3>On Booking.com</h3><span>Awarded 10 out of 10 at the Traveller Review Awards 2025 and 9.8 in 2026.</span><span class="go">View on Booking.com</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="box dark">
+  <div class="wrap grid">
+    <div>
+      <h2>Across the yard: the Horsebox</h2>
+      <p>Our sister stay is a lovingly converted 7.5-ton horsebox sleeping two to four. Solar panels make the electricity, a diesel heater keeps it snug, and there are hammocks strung between the trees.</p>
+      <p><a class="link" href="https://thestablesatwitsend.my.canva.site/the-horsebox-at-wits-end">See the Horsebox at Wits End</a></p>
+    </div>
+    <img src="https://thestablesatwitsend.my.canva.site/_assets/media/2da6775e0826bf731d9ad5702df7ade2.jpg" alt="The green converted horsebox with its wooden steps" width="1807" height="2400" loading="lazy">
+  </div>
+</section>
+
+<footer class="dark">
+  <div class="wrap">
+    <div class="grid">
+      <h2>Ask us anything</h2>
+      <p><a href="tel:07368449088">07368 449088</a><br><a href="mailto:witsendstables@gmail.com">witsendstables@gmail.com</a></p>
+      <p>The Stables at Wits End<br>Hartford, Cheshire, CW8 2SH<br>Parking on site, shared with Horsebox guests</p>
+    </div>
+    <small>Concept design by Pete Owen Design. Not the live Stables at Wits End website. Photographs are the Stables’ own, shown as stand-ins.</small>
+  </div>
+</footer>
+</body>
+</html>
