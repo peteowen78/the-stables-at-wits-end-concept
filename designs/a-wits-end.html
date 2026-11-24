@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Stables at Wits End (concept A: End of Your Wits)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--felt:#1C6646;--felt-d:#134A33;--cream:#FFF3D9;--ink:#17261E;--yellow:#FFC83A;--red:#E2412B;--soft:#F6E4BD;--mute:#4A5A50}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 1.0625rem/1.6 Onest,system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+h1,h2,h3{font-family:Caprasimo,Georgia,serif;font-weight:400;margin:0;text-wrap:balance;line-height:1}
+h2{font-size:clamp(2.1rem,5.2vw,3.9rem);letter-spacing:-.01em}
+p{margin:0 0 1em;max-width:62ch}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+.on-light :focus-visible{outline-color:var(--felt)}
+
+/* header + hero share the felt */
+.felt{background:var(--felt);color:var(--cream);position:relative}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;line-height:1}
+.mark .ball{width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font:400 1.15rem/1 Caprasimo,serif;box-shadow:inset -5px -6px 0 rgba(0,0,0,.12)}
+.mark b{font:400 1.7rem/0.9 Caprasimo,serif;display:block}
+.mark small{display:block;font-size:.78rem;font-weight:500;letter-spacing:.02em;opacity:.9;margin-bottom:3px}
+nav{display:flex;gap:22px;align-items:center;font-weight:500}
+nav a{text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--yellow)}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;text-decoration:none;padding:14px 24px;border-radius:999px;transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s}
+.btn:hover{transform:translateY(-2px) rotate(-1.5deg);background:#FFD75E}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 2px var(--cream)}
+.btn.ghost:hover{background:var(--cream);color:var(--ink)}
+nav .btn{padding:10px 18px}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(20px,4vw,48px) 0 clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(2.9rem,7.6vw,5.9rem);letter-spacing:-.015em}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p{font-size:1.2rem;margin:26px 0 28px;max-width:46ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.snap{position:relative;justify-self:center;width:min(100%,440px)}
+.snap img{aspect-ratio:1;object-fit:cover;border:12px solid var(--cream);border-radius:10px;transform:rotate(3deg);box-shadow:0 18px 30px -14px rgba(0,0,0,.55)}
+.sticker{position:absolute;left:-26px;bottom:-22px;width:132px;height:132px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font:400 1.5rem/1 Caprasimo,serif;transform:rotate(-12deg);box-shadow:0 10px 18px -8px rgba(0,0,0,.5)}
+.sticker span{display:block;font:700 .8rem/1.2 Onest,sans-serif;margin-top:4px}
+@media (prefers-reduced-motion:no-preference){
+  .sticker{animation:plonk .9s cubic-bezier(.16,1,.3,1) .3s both}
+  @keyframes plonk{from{transform:rotate(18deg) scale(1.25)}to{transform:rotate(-12deg) scale(1)}}
+}
+.proof{border-top:2px dashed rgba(255,243,217,.4);padding:18px 0 22px;display:flex;flex-wrap:wrap;gap:8px 34px;font-weight:500}
+.proof b{color:var(--yellow);font-weight:700}
+
+section{padding:clamp(56px,8vw,104px) 0}
+/* things to do */
+.todo{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,5vw,60px);align-items:center}
+.todo h2{margin-bottom:28px}
+.run{font:400 clamp(1.5rem,3.3vw,2.5rem)/1.28 Caprasimo,serif;margin:0 0 24px;padding:0;list-style:none;color:var(--felt)}
+.run li{display:inline}
+.run li:not(:last-child)::after{content:"";display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--red);margin:0 .38em .12em;vertical-align:middle}
+.run li:nth-child(3n)::after{background:var(--yellow)}
+.run li:nth-child(3n+1)::after{background:var(--ink)}
+.todo img{aspect-ratio:3/4;object-fit:cover;border-radius:200px 200px 14px 14px;transform:rotate(-2deg)}
+.aside{color:var(--mute)}
+
+/* sleeping */
+.beds{background:var(--soft)}
+.beds .grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pair img{aspect-ratio:3/4;object-fit:cover;border-radius:14px}
+.pair img:last-child{margin-top:44px}
+.beds h2{margin-bottom:22px}
+dl.facts{margin:0;display:grid;gap:0}
+dl.facts div{padding:16px 0;border-top:2px solid var(--ink);display:grid;grid-template-columns:130px 1fr;gap:16px}
+dl.facts dt{font:400 1.2rem/1.2 Caprasimo,serif}
+dl.facts dd{margin:0}
+
+/* hot tub */
+.tub{background:var(--yellow)}
+.tub .grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,64px);align-items:center}
+.tub h2{margin-bottom:18px}
+.price{display:flex;gap:14px}
+.price div{width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-content:center;text-align:center;font-weight:500;font-size:.9rem;line-height:1.25}
+.price b{font:400 2.5rem/1 Caprasimo,serif;display:block;color:var(--yellow)}
+.price div:last-child{background:var(--felt)}
+
+/* quote */
+.say{background:var(--felt-d);color:var(--cream)}
+.say blockquote{margin:0;font:400 clamp(1.5rem,3.4vw,2.6rem)/1.22 Caprasimo,serif;max-width:26ch;max-width:min(100%,24em);text-wrap:balance}
+.say blockquote em{font-style:normal;color:var(--yellow)}
+.say p{margin:22px 0 0;opacity:.85}
+
+/* book */
+.book h2{margin-bottom:28px}
+.ways{list-style:none;margin:0;padding:0}
+.ways li{border-top:2px solid var(--ink)}
+.ways li:last-child{border-bottom:2px solid var(--ink)}
+.ways a{display:grid;grid-template-columns:minmax(0,220px) 1fr auto;gap:8px 28px;align-items:center;padding:22px 8px;text-decoration:none;transition:background .2s}
+.ways a:hover{background:var(--soft)}
+.ways h3{font-size:1.7rem}
+.ways .go{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+
+/* horsebox */
+.box{background:var(--felt);color:var(--cream)}
+.box .grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,5vw,64px);align-items:center}
+.box img{aspect-ratio:4/5;object-fit:cover;object-position:50% 70%;border-radius:14px;border:10px solid var(--cream);transform:rotate(-3deg)}
+.box h2{margin-bottom:18px}
+.box a.link{font-weight:700;color:var(--yellow);text-underline-offset:4px}
+
+/* faq */
+.faq h2{margin-bottom:24px}
+details{border-top:2px solid var(--ink)}
+details:last-of-type{border-bottom:2px solid var(--ink)}
+summary{cursor:pointer;list-style:none;padding:18px 44px 18px 4px;font:400 1.3rem/1.25 Caprasimo,serif;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:8px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:var(--felt);transition:background .2s,transform .3s}
+details[open] summary::after{background:var(--red);transform:scale(.7)}
+summary:hover{color:var(--felt)}
+details p{padding:0 4px 18px}
+
+footer{background:var(--ink);color:var(--cream);padding:56px 0 40px}
+footer .grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+footer h2{font-size:clamp(2rem,4vw,3rem);color:var(--yellow)}
+footer a{text-underline-offset:4px}
+footer a:hover{color:var(--yellow)}
+footer small{display:block;margin-top:36px;opacity:.75}
+
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  .hero,.todo,.beds .grid,.tub .grid,.box .grid,footer .grid{grid-template-columns:1fr}
+  .snap{width:min(86%,360px);margin-top:8px}
+  .sticker{left:-14px;width:108px;height:108px;font-size:1.2rem}
+  .todo img{max-width:300px;justify-self:center}
+  .ways a{grid-template-columns:1fr}
+  .box img{max-width:300px}
+  dl.facts div{grid-template-columns:1fr;gap:4px}
+  .price div{width:132px;height:132px}
+}
+</style>
+</head>
+<body>
+<div style="background:#17201B;color:#fff;font:500 14px/1.4 system-ui,sans-serif;padding:9px 20px;position:relative;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;z-index:2147483000"><span style="display:inline-flex;align-items:center;gap:8px"><svg style="height:12px;width:auto;color:#fff" viewBox="0 0 487.5 208.5" role="img" aria-label="Pete Owen Design logo"><path fill="currentColor" d="M487.5,10.6h-41.2v15.5c-15.3-10.6-33.9-16.8-53.8-16.8-30.1,0-57,14.1-74.4,36-17.4-21.9-44.3-36-74.4-36s-57,14.1-74.4,36c-17.4-21.9-44.3-36-74.4-36C44.8,9.4,3.8,48,0,96.9h-.3v100.3h41.2v-14.5c15.3,10.6,33.9,16.8,53.8,16.8,30.1,0,57-14.1,74.4-36,17.4,21.9,44.3,36,74.4,36s57-14.1,74.4-36c17.4,21.9,44.3,36,74.4,36,52.4,0,95.1-42.6,95.1-95.1s0-1.3,0-1.9h0V10.6h0ZM94.6,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM243.5,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8ZM392.4,158.2c-29.7,0-53.8-24.2-53.8-53.8s24.2-53.8,53.8-53.8,53.8,24.2,53.8,53.8-24.2,53.8-53.8,53.8Z"/></svg> Design idea by Pete Owen Design. Not the live The Stables at Wits End website.</span><a href="../index.html" style="color:#fff;font-weight:700">Back to the start</a></div>
+<!--
+THESIS: The name is a joke the business has never told. Tell it: arrive at your wits' end, leave it at the gate.
+OWN-WORLD: The games room. Pool-table felt, cue-ball cream, coloured balls as the dots and stickers.
+STORY: You are frazzled, you bring nine people, there is a daft amount to do, then book it.
+FIRST VIEWPORT: Felt green, the headline joke in fat cream letters, their games-room photo pinned at a tilt, "Sleeps 10" sticker.
+-->
+<div class="felt">
+  <div class="wrap">
+    <header>
+      <a class="mark" href="#top" aria-label="The Stables at Wits End, home">
+        <span class="ball" aria-hidden="true">10</span>
+        <span><small>The Stables at</small><b>Wits End</b></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#todo">Things to do</a>
+        <a href="#beds">Beds</a>
+        <a href="#tub">Hot tub</a>
+        <a href="#faq">Questions</a>
+        <a class="btn" href="#book">Book</a>
+      </nav>
+    </header>
+    <main id="top">
+    <div class="hero">
+      <div>
+        <h1>At your wits’ end? <em>Lovely.</em> You’ve arrived.</h1>
+        <p>A family-run holiday house for ten in Hartford, Cheshire, with a games room, a cinema room and a wood-fired hot tub. Bring everyone you like. Leave your wits at the gate.</p>
+        <div class="cta">
+          <a class="btn" href="#book">Check dates</a>
+          <a class="btn ghost" href="tel:07368449088">Call 07368 449088</a>
+        </div>
+      </div>
+      <div class="snap">
+        <img src="https://thestablesatwitsend.my.canva.site/_assets/media/2ca52bc1ea8fc51ca3cb9ec3ed9da0ea.jpg" alt="The games room at the Stables: a pool table and table football between brick pillars" width="1440" height="1440">
+        <div class="sticker" aria-hidden="true"><div>Sleeps 10<span>hot tub optional</span></div></div>
+      </div>
+    </div>
+    <div class="proof">
+      <span><b>10 out of 10</b> Booking.com Traveller Review Awards 2025</span>
+      <span><b>9.8 out of 10</b> in 2026</span>
+      <span><b>Guest favourite</b> and Superhost on Airbnb</span>
+    </div>
+  </div>
+</div>
+
+<div class="on-light">
+<section id="todo">
+  <div class="wrap todo">
+    <div>
+      <h2>Things to do instead of checking your emails</h2>
+      <ul class="run">
+        <li>3 par golf course</li><li>Pool table</li><li>Table football</li><li>Darts</li><li>PlayStation 2</li><li>Laser tag</li><li>Board games</li><li>Cards</li><li>A piano</li><li>A guitar</li><li>A glow-in-the-dark, star-studded cinema room</li>
+      </ul>
+      <p class="aside">All of it is on site. For the cinema room, just bring your own popcorn.</p>
+    </div>
+    <img src="https://thestablesatwitsend.my.canva.site/_assets/media/80c145ca8106b8fcf43355f140d01919.jpg" alt="Old timber beams over the pool table and table football, with the dining table beyond" width="720" height="956" loading="lazy">
+  </div>
+</section>
+
+<section class="beds" id="beds">
+  <div class="wrap grid">
+    <div class="pair">
+      <img src="https://thestablesatwitsend.my.canva.site/_assets/media/9983a471cc055d040d78452d5330f7af.jpg" alt="A bedroom with a double bed, white linen and a rattan lampshade" width="720" height="956" loading="lazy">
+      <img src="https://thestablesatwitsend.my.canva.site/_assets/media/be6a7fb342c16340c1fed36287ff6fcc.jpg" alt="The long dining table set for the whole group under timber beams" width="720" height="956" loading="lazy">
+    </div>
+    <div>
+      <h2>Ten of you, one very long table</h2>
+      <dl class="facts">
+        <div><dt>Sleeps</dt><dd>Up to 10 guests. The main bedrooms take eight, and every bed can be set up as singles or doubles. The cinema room has a new king size bed built in.</dd></div>
+        <div><dt>Bedding</dt><dd>Every bed gets a super king size duvet, whatever its size. Linen is at least 300 thread count, and duvets and pillows are anti-allergy.</dd></div>
+        <div><dt>Washing</dt><dd>Two toilets and one shower. The shower has Bluetooth, so you can listen to your favourite tunes.</dd></div>
+        <div><dt>Eating</dt><dd>A fully equipped kitchen, a large dining table the whole group can sit around, and a bespoke bar area.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="tub" id="tub">
+  <div class="wrap grid">
+    <div>
+      <h2>The hot tub runs on wood, not buttons</h2>
+      <p>It is wood fired and sits in a private garden, open to the air, so you can enjoy looking at the stars. The charge covers cleaning, filling and pre-heating it, the fresh water and the wood.</p>
+      <p><strong>Want it? Tell us before you book.</strong></p>
+    </div>
+    <div class="price">
+      <div><b>£75</b>first use</div>
+      <div><b>£30</b>each use<br>after that</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="say">
+  <div class="wrap">
+    <blockquote>“We booked a weekend away… and accidentally created one of those memories the whole family will talk about for years. <em>Nobody wants to be the first to go to bed.</em>”</blockquote>
+    <p>A guest review, as quoted on the Stables’ own website (shortened).</p>
+  </div>
+</section>
+
+<div class="on-light">
+<section class="book" id="book">
+  <div class="wrap">
+    <h2>Three ways to book. Pick your favourite.</h2>
+    <ul class="ways">
+      <li><a href="https://booking-directly.com/widgets/CvSD4731t3EUx8sFFP2vAmbaZjFaz17iXk4ZNqc3qUArprjdPhVbDNhJwbDnB/properties/unit-selection"><h3>Straight with us</h3><span>Book directly with the family who run it.</span><span class="go">Check dates</span></a></li>
+      <li><a href="https://www.airbnb.co.uk/rooms/1100619209820169795"><h3>Airbnb</h3><span>Rated a guest favourite, with Superhost status and 5-star reviews.</span><span class="go">See it on Airbnb</span></a></li>
+      <li><a href="https://www.booking.com/Share-DCr284"><h3>Booking.com</h3><span>10 out of 10 at the Traveller Review Awards 2025, and 9.8 in 2026.</span><span class="go">See it on Booking.com</span></a></li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<section class="box">
+  <div class="wrap grid">
+    <img src="https://thestablesatwitsend.my.canva.site/_assets/media/2da6775e0826bf731d9ad5702df7ade2.jpg" alt="A green converted horsebox lorry with wooden steps, parked in a field" width="1807" height="2400" loading="lazy">
+    <div>
+      <h2>Only two of you? We have a horsebox.</h2>
+      <p>On the same site is our sister stay: a lovingly converted 7.5-ton horsebox for two to four guests, with solar power, fairy lights, hammocks between the trees and its own wood-fired hot tub.</p>
+      <p><a class="link" href="https://thestablesatwitsend.my.canva.site/the-horsebox-at-wits-end">Meet the Horsebox at Wits End</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="on-light">
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Sensible questions</h2>
+    <details open><summary>Are there good train links?</summary><p>Yes. Chester is 2 stops (30 mins) from Cuddington, and Liverpool is 4 stops (30 mins) from Hartford.</p></details>
+    <details><summary>Is there parking?</summary><p>Yes. There is a large car park, shared with the guests of our converted horsebox.</p></details>
+    <details><summary>What is there to do nearby?</summary><p>Wildshore for water activities is 4 miles, a 10 minute drive. Oulton Park for touring cars and superbikes is 6 miles, 15 minutes. Delamere Forest for Go Ape, mountain biking and walking is 8 miles, 16 minutes.</p></details>
+    <details><summary>Do you have a hot tub?</summary><p>Yes. It is wood fired, in a private garden, open to the air so you can enjoy looking at the stars. It is £75 for the first use and £30 for each use after.</p></details>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <h2>Wits gathered? Get in touch.</h2>
+      <p><a href="tel:07368449088">07368 449088</a><br><a href="mailto:witsendstables@gmail.com">witsendstables@gmail.com</a></p>
+      <p>The Stables at Wits End<br>Hartford, Cheshire, CW8 2SH<br>Family-run holiday accommodation, sleeping 10</p>
+    </div>
+    <small>Concept design by Pete Owen Design. Not the live Stables at Wits End website. Photographs are the Stables’ own, shown as stand-ins.</small>
+  </div>
+</footer>
+</body>
+</html>
