@@ -50,6 +50,12 @@
   .btn:hover{background:#2B3A32}
   .ghost{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px 17px}
   .ghost:hover{background:var(--card)}
+  .ideas{margin:0 0 72px}
+  .idea-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .idea{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px}
+  .idea h3{font-size:20px;line-height:1.25;margin:0 0 6px}
+  .idea p{margin:0;color:var(--soft);font-size:16px}
+  @media (max-width:760px){.idea-list{grid-template-columns:1fr}}
   footer{border-top:1px solid var(--line);padding:26px 0 52px;font-size:15px;color:var(--soft)}
   footer p{margin:0 0 8px;max-width:70ch}
   footer .pod{height:13px;width:auto;vertical-align:-1px;margin-right:8px;color:var(--ink)}
